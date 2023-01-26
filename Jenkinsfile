@@ -20,10 +20,8 @@ pipeline {
         }
         stage ('Deploy in Kubernetes'){
             steps{
-                script{
-                    withKubeconfig([credencialsId: 'kubeconfig_grg']) {
-                        sh 'kubectl -f ./k8s/depployment.yaml'
-                    }
+                withKubeConfig([credencialsId: 'kubeconfig_grg']) {
+                    sh 'kubectl -f ./k8s/depployment.yaml'
                 }
             }
         }
