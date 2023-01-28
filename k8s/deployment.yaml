@@ -51,7 +51,8 @@ spec:
     spec:
       containers:
         - name: web
-          image: mcgregorydouglas/kube-news:{{TAG}}
+#          image: mcgregorydouglas/kube-news:{{TAG}}
+          image: mcgregorydouglas/kube-news:v1
           ports:
           - containerPort: 8080
           env:
